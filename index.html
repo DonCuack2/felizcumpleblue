@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confesión de Amor</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: url('fondo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(12px);
+      max-width: 650px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #fdfdfd;
+      white-space: pre-line;
+      text-align: justify;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 15px;
+      margin: 25px auto 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 25px;
+    }
+
+    .hint-text {
+      font-size: 0.95em;
+      color: #ffeaea;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .download-button {
+      padding: 12px 26px;
+      font-size: 1em;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff6f91;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .download-button:hover {
+      background-color: #ff477e;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>PARA MARTY 💖</h1>
+    <p>
+Hoy el calendario marca tu cumpleaños, y aunque las palabras no siempre alcanzan, me detengo a escribirte estas líneas como quien guarda un recuerdo en papel.
+
+Gracias por los días que compartimos "por breves o largos que hayan sido", por las conversaciones que aún resuenan y por tu presencia en momentos que, sin saberlo, dejaron huella. No todos los días brillaron, pero algunos lo hicieron más porque tú estabas ahí.
+
+Celebro tu vida, no solo hoy, sino en cada memoria que me recuerda que fuiste parte de ella.
+
+Que este nuevo año te traiga paz, caminos claros y razones para sonreír, incluso en los días nublados.
+
+Con cariño y mi más sincero aprecio.
+    </p>
+    <img src="blue.gif" alt="Amor">
+    <div class="button-container">
+      <p class="hint-text">🔐 Pista: es algo que te decía todas las mañanas</p>
+      <button class="download-button" onclick="pedirContrasena()">Descargar Carta en PDF</button>
+    </div>
+  </div>
+
+  <audio autoplay loop hidden>
+    <source src="cancion.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    function pedirContrasena() {
+      const clave = prompt("Introduce la contraseña para descargar la carta:");
+      const contrasenaCorrecta = "amodoro";
+
+      if (clave === contrasenaCorrecta) {
+        const link = document.createElement('a');
+        link.href = 'carta.pdf';
+        link.download = 'carta.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else if (clave !== null) {
+        alert("Contraseña incorrecta. Inténtalo de nuevo.");
+      }
+    }
+  </script>
+</body>
+</html>
